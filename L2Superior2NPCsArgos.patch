@@ -1,0 +1,15 @@
+### Eclipse Workspace Patch 1.0
+#P L2J_Mobius_12.3_Superion
+diff --git dist/game/data/stats/npcs/31900-31999.xml dist/game/data/stats/npcs/31900-31999.xml
+index 45bd838..680baa9 100644
+--- dist/game/data/stats/npcs/31900-31999.xml
++++ dist/game/data/stats/npcs/31900-31999.xml
+@@ -864,7 +864,7 @@
+ 			<height normal="23" />
+ 		</collision>
+ 	</npc>
+-	<npc id="31920" level="70" type="Monster" name="Elmoreden Servant's Ghost">
++	<npc id="31920" level="70" type="Folk" name="Elmoreden Servant's Ghost">
+ 		<race>HUMAN</race>
+ 		<sex>FEMALE</sex>
+ 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

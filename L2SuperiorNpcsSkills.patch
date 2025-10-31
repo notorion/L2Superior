@@ -1,0 +1,949 @@
+### Eclipse Workspace Patch 1.0
+#P L2J_Mobius_12.3_Superion
+diff --git dist/game/data/stats/npcs/24600-24699.xml dist/game/data/stats/npcs/24600-24699.xml
+index 6195c28..d734ae7 100644
+--- dist/game/data/stats/npcs/24600-24699.xml
++++ dist/game/data/stats/npcs/24600-24699.xml
+@@ -268,12 +268,7 @@
+ 			<param name="MoveAroundSocial" value="80" />
+ 			<param name="MoveAroundSocial1" value="80" />
+ 			<param name="MoveAroundSocial2" value="80" />
+-			<param name="SoulShot" value="100" />
+-			<param name="SoulShotRate" value="10" />
+-			<param name="SpiritShot" value="100" />
+-			<param name="SpiritShotRate" value="5" />
+-			<param name="LongRangeGuardRate" value="5" />
+-			<skill name="PhysicalSpecial" id="4032" level="6" />
++			<skill name="Physical" id="33187" level="1" />
+ 		</parameters>
+ 		<race>ANIMAL</race>
+ 		<sex>MALE</sex>
+@@ -298,15 +293,15 @@
+ 			<skill id="4416" level="4" /> <!-- Animals -->
+ 			<skill id="5465" level="1" /> <!-- Earth Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+-			<skill id="4032" level="6" /> <!-- Power Strike -->
+ 			<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
+ 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+ 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
++			<skill id="33187" level="1" /> <!-- Wild Break -->
+ 		</skillList>
+ 		<shots shotChance="30" spiritChance="30" />
+ 		<exCrtEffect>false</exCrtEffect>
+ 		<sNpcPropHpRate>2</sNpcPropHpRate>
+-		<ai clanHelpRange="300" aggroRange="300">
++		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+ 			<clanList>
+ 				<clan>ALL</clan>
+ 			</clanList>
+@@ -346,13 +341,7 @@
+ 			<param name="MoveAroundSocial" value="78" />
+ 			<param name="MoveAroundSocial1" value="78" />
+ 			<param name="MoveAroundSocial2" value="78" />
+-			<param name="AttackLowHP" value="1" />
+-			<param name="SoulShot" value="100" />
+-			<param name="SoulShotRate" value="10" />
+-			<param name="SpiritShot" value="100" />
+-			<param name="SpiritShotRate" value="5" />
+-			<param name="LongRangeGuardRate" value="5" />
+-			<skill name="PhysicalSpecial" id="4579" level="7" />
++			<skill name="Physical" id="33187" level="1" />
+ 		</parameters>
+ 		<race>BEAST</race>
+ 		<sex>MALE</sex>
+@@ -379,13 +368,13 @@
+ 			<skill id="4416" level="3" /> <!-- Beasts -->
+ 			<skill id="5465" level="1" /> <!-- Earth Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+-			<skill id="4579" level="7" /> <!-- Bleed -->
+ 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
++			<skill id="33187" level="1" /> <!-- Wild Break -->
+ 		</skillList>
+ 		<shots shotChance="30" spiritChance="30" />
+ 		<exCrtEffect>false</exCrtEffect>
+ 		<sNpcPropHpRate>3</sNpcPropHpRate>
+-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
++		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+ 			<clanList>
+ 				<clan>ALL</clan>
+ 			</clanList>
+@@ -445,14 +434,14 @@
+ 			<skill id="4416" level="3" /> <!-- Beasts -->
+ 			<skill id="5465" level="1" /> <!-- Earth Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+-			<skill id="4032" level="1" /> <!-- Power Strike -->
+ 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
++			<skill id="33187" level="1" /> <!-- Wild Break -->
+ 		</skillList>
+ 		<collision>
+ 			<radius normal="22" grown="27" />
+ 			<height normal="31" grown="38" />
+ 		</collision>
+-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
++		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+ 			<clanList>
+ 				<clan>ALL</clan>
+ 			</clanList>
+@@ -508,14 +497,14 @@
+ 			<skill id="4416" level="4" /> <!-- Animals -->
+ 			<skill id="5465" level="1" /> <!-- Earth Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+-			<skill id="4032" level="1" /> <!-- Power Strike -->
+ 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
++			<skill id="33187" level="1" /> <!-- Wild Break -->
+ 		</skillList>
+ 		<collision>
+ 			<radius normal="15" grown="18" />
+ 			<height normal="39" grown="47.5" />
+ 		</collision>
+-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
++		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+ 			<clanList>
+ 				<clan>ALL</clan>
+ 			</clanList>
+@@ -551,25 +540,15 @@
+ 			<param name="MoveAroundSocial" value="90" />
+ 			<param name="MoveAroundSocial1" value="90" />
+ 			<param name="MoveAroundSocial2" value="90" />
+-			<skill name="CheckMagic" id="4098" level="7" />
+-			<skill name="CheckMagic1" id="4046" level="7" />
+-			<skill name="SleepMagic" id="4046" level="7" />
+-			<param name="SoulShot" value="100" />
+-			<param name="SoulShotRate" value="10" />
+-			<param name="SpiritShot" value="100" />
+-			<param name="SpiritShotRate" value="5" />
+ 			<param name="LongRangeGuardRate" value="5" />
+-			<skill name="DDMagic" id="4105" level="7" />
+-			<skill name="CancelMagic" id="4094" level="7" />
+-			<skill name="DeBuff" id="4657" level="7" />
+-			<skill name="DeBuffCancel" id="4650" level="1" />
++			<skill name="DDMagic" id="33188" level="1" />
+ 		</parameters>
+ 		<race>ETC</race>
+ 		<sex>MALE</sex>
+ 		<acquire exp="1158031" sp="1042" />
+ 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+ 			<vitals hp="2538603" hpRegen="9.5" mp="3190" mpRegen="3.3" />
+-			<attack physical="1599215" magical="145753" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
++			<attack physical="1599215" magical="145753" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="50" distance="100" width="120" />
+ 			<defence physical="753240" magical="364523" />
+ 			<attribute>
+ 				<attack type="EARTH" value="2350" />
+@@ -591,19 +570,13 @@
+ 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+ 			<skill id="5465" level="1" /> <!-- Earth Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+-			<skill id="4046" level="7" /> <!-- Sleep -->
+-			<skill id="4094" level="7" /> <!-- Cancellation -->
+-			<skill id="4098" level="7" /> <!-- Silence -->
+-			<skill id="4105" level="7" /> <!-- Beam Cannon -->
+-			<skill id="4650" level="1" /> <!-- Dispel Hold -->
+-			<skill id="4657" level="7" /> <!-- Hold -->
+-			<skill id="4789" level="3" /> <!-- High Lv. -->
+ 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
++			<skill id="33188" level="1" /> <!-- Earth Strike -->
+ 		</skillList>
+ 		<shots shotChance="30" spiritChance="30" />
+ 		<exCrtEffect>false</exCrtEffect>
+ 		<sNpcPropHpRate>3</sNpcPropHpRate>
+-		<ai aggroRange="300" clanHelpRange="400" isAggressive="true">
++		<ai type="MAGE" aggroRange="300" clanHelpRange="400" isAggressive="true">
+ 			<clanList>
+ 				<clan>ALL</clan>
+ 			</clanList>
+@@ -643,14 +616,7 @@
+ 			<param name="MoveAroundSocial" value="80" />
+ 			<param name="MoveAroundSocial1" value="80" />
+ 			<param name="MoveAroundSocial2" value="80" />
+-			<param name="AttackLowHP" value="1" />
+-			<param name="SoulShot" value="100" />
+-			<param name="SoulShotRate" value="10" />
+-			<param name="SpiritShot" value="100" />
+-			<param name="SpiritShotRate" value="5" />
+-			<param name="LongRangeGuardRate" value="5" />
+-			<skill name="W_LongRangeDDMagic" id="4563" level="7" />
+-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" />
++			<skill name="DDMagic" id="33188" level="1" />
+ 		</parameters>
+ 		<race>ETC</race>
+ 		<sex>MALE</sex>
+@@ -679,15 +645,13 @@
+ 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+ 			<skill id="5465" level="1" /> <!-- Earth Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+-			<skill id="4561" level="7" /> <!-- Fire Burn -->
+-			<skill id="4563" level="7" /> <!-- Solar Flare -->
+-			<skill id="4789" level="3" /> <!-- High Lv. -->
+ 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
++			<skill id="33188" level="1" /> <!-- Earth Strike -->
+ 		</skillList>
+ 		<shots shotChance="30" spiritChance="30" />
+ 		<exCrtEffect>false</exCrtEffect>
+ 		<sNpcPropHpRate>3</sNpcPropHpRate>
+-		<ai aggroRange="300" clanHelpRange="400" isAggressive="true">
++		<ai type="BALANCED" aggroRange="300" clanHelpRange="400" isAggressive="true">
+ 			<clanList>
+ 				<clan>ALL</clan>
+ 			</clanList>
+@@ -1056,8 +1020,9 @@
+ 			<skill id="33112" level="1" /> <!-- Night of Spores -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="32469" level="1" /> <!-- Putrid Strike -->
+ 		</skillList>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
+ 			<clanList>
+ 				<clan>SOS</clan>
+ 			</clanList>
+@@ -1168,8 +1133,9 @@
+ 			<skill id="33112" level="1" /> <!-- Night of Spores -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="32469" level="1" /> <!-- Putrid Strike -->
+ 		</skillList>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
+ 			<clanList>
+ 				<clan>SOS</clan>
+ 			</clanList>
+@@ -1281,8 +1247,9 @@
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+ 			<skill id="5599" level="12" /> <!-- Confusion Resistance -->
++			<skill id="32471" level="1" /> <!-- Putrid Slash -->
+ 		</skillList>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
+ 			<clanList>
+ 				<clan>SOS</clan>
+ 			</clanList>
+@@ -1394,8 +1361,9 @@
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+ 			<skill id="5599" level="12" /> <!-- Confusion Resistance -->
++			<skill id="32471" level="1" /> <!-- Putrid Slash -->
+ 		</skillList>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
+ 			<clanList>
+ 				<clan>SOS</clan>
+ 			</clanList>
+@@ -2370,7 +2338,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="10" magical="10" />
+ 		</stats>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
++		<ai type="MAGE" clanHelpRange="450" aggroRange="300" isAggressive="false">
+ 			<clanList>
+ 				<clan>VARKA_SILENOS</clan>
+ 			</clanList>
+@@ -2395,6 +2363,8 @@
+ 			<skill id="33104" level="1" /> <!-- Party Bonus -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="33182" level="1" /> <!-- Darkness Energy Bomb -->
++			<skill id="33181" level="1" /> <!-- Dark Thorn -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -2487,7 +2457,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="10" magical="10" />
+ 		</stats>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
+ 			<clanList>
+ 				<clan>VARKA_SILENOS</clan>
+ 			</clanList>
+@@ -2512,6 +2482,8 @@
+ 			<skill id="33104" level="1" /> <!-- Party Bonus -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="33182" level="1" /> <!-- Darkness Energy Bomb -->
++			<skill id="33181" level="1" /> <!-- Dark Thorn -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -2604,7 +2576,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="10" magical="10" />
+ 		</stats>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
+ 			<clanList>
+ 				<clan>VARKA_SILENOS</clan>
+ 			</clanList>
+@@ -2629,6 +2601,7 @@
+ 			<skill id="33104" level="1" /> <!-- Party Bonus -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="33183" level="1" /> <!-- Vicious Killing Strike -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -2721,7 +2694,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="10" magical="10" />
+ 		</stats>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
+ 			<clanList>
+ 				<clan>VARKA_SILENOS</clan>
+ 			</clanList>
+@@ -2746,6 +2719,8 @@
+ 			<skill id="33104" level="1" /> <!-- Party Bonus -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="33184" level="1" /> <!-- Furious Slasher -->
++			<skill id="33183" level="1" /> <!-- Vicious Killing Strike -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -2838,7 +2813,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="10" magical="10" />
+ 		</stats>
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
+ 			<clanList>
+ 				<clan>VARKA_SILENOS</clan>
+ 			</clanList>
+@@ -2863,6 +2838,7 @@
+ 			<skill id="33104" level="1" /> <!-- Party Bonus -->
+ 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
+ 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
++			<skill id="33184" level="1" /> <!-- Furious Slasher -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+diff --git dist/game/data/stats/npcs/24800-24899.xml dist/game/data/stats/npcs/24800-24899.xml
+index 4d688e7..fb31d00 100644
+--- dist/game/data/stats/npcs/24800-24899.xml
++++ dist/game/data/stats/npcs/24800-24899.xml
+@@ -3454,7 +3454,7 @@
+ 			</speed>
+ 		</stats>
+ 		<status attackable="true" />
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+ 			<clanList>
+ 				<clan>VALLEY_OF_SAINTS</clan>
+ 			</clanList>
+@@ -3468,6 +3468,7 @@
+ 			<skill id="5466" level="1" /> <!-- Holy Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+ 			<skill id="32675" level="1" /> <!-- Common Hunting Zone -->
++			<skill id="34277" level="1" /> <!-- Punishment of Light -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -3553,7 +3554,7 @@
+ 			</speed>
+ 		</stats>
+ 		<status attackable="true" />
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+ 			<clanList>
+ 				<clan>VALLEY_OF_SAINTS</clan>
+ 			</clanList>
+@@ -3567,6 +3568,7 @@
+ 			<skill id="5466" level="1" /> <!-- Holy Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+ 			<skill id="32675" level="1" /> <!-- Common Hunting Zone -->
++			<skill id="32678" level="1" /> <!-- Bow of Light -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -3652,7 +3654,7 @@
+ 			</speed>
+ 		</stats>
+ 		<status attackable="true" />
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+ 			<clanList>
+ 				<clan>VALLEY_OF_SAINTS</clan>
+ 			</clanList>
+@@ -3666,6 +3668,7 @@
+ 			<skill id="5466" level="1" /> <!-- Holy Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+ 			<skill id="32675" level="1" /> <!-- Common Hunting Zone -->
++			<skill id="34279" level="1" /> <!-- Oppression of Light -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -3739,7 +3742,7 @@
+ 		<acquire exp="750442" sp="675" />
+ 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+ 			<vitals hp="1604217" hpRegen="10.5" mp="3107" mpRegen="3.6" />
+-			<attack physical="1230165" magical="112118" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
++			<attack physical="1230165" magical="112118" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="BOW" range="600" distance="600" width="120" />
+ 			<defence physical="502160" magical="247796" />
+ 			<attribute>
+ 				<attack type="HOLY" value="1600" />
+@@ -3751,7 +3754,7 @@
+ 			</speed>
+ 		</stats>
+ 		<status attackable="true" />
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="false">
++		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+ 			<clanList>
+ 				<clan>VALLEY_OF_SAINTS</clan>
+ 			</clanList>
+@@ -3765,6 +3768,7 @@
+ 			<skill id="5466" level="1" /> <!-- Holy Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+ 			<skill id="32675" level="1" /> <!-- Common Hunting Zone -->
++			<skill id="32680" level="1" /> <!-- Will of Light -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+@@ -3838,7 +3842,7 @@
+ 		<acquire exp="750442" sp="675" />
+ 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+ 			<vitals hp="1604217" hpRegen="10.5" mp="3107" mpRegen="3.6" />
+-			<attack physical="1230165" magical="112118" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
++			<attack physical="1230165" magical="112118" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="600" width="120" />
+ 			<defence physical="502160" magical="247796" />
+ 			<attribute>
+ 				<attack type="HOLY" value="1600" />
+@@ -3850,7 +3854,7 @@
+ 			</speed>
+ 		</stats>
+ 		<status attackable="true" />
+-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="false">
++		<ai type="MAGE" clanHelpRange="450" aggroRange="450" isAggressive="false">
+ 			<clanList>
+ 				<clan>VALLEY_OF_SAINTS</clan>
+ 			</clanList>
+@@ -3864,6 +3868,8 @@
+ 			<skill id="5466" level="1" /> <!-- Holy Attack -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+ 			<skill id="32675" level="1" /> <!-- Common Hunting Zone -->
++			<skill id="34282" level="1" /> <!-- Abundance of Light -->
++			<skill id="34281" level="1" /> <!-- Control of Light -->
+ 		</skillList>
+ 		<dropLists>
+ 			<drop>
+diff --git dist/game/data/stats/npcs/29400-29499.xml dist/game/data/stats/npcs/29400-29499.xml
+index 12c5eaf..3521e71 100644
+--- dist/game/data/stats/npcs/29400-29499.xml
++++ dist/game/data/stats/npcs/29400-29499.xml
+@@ -1547,7 +1547,12 @@
+ 		</skillList>
+ 	</npc>
+ 	<npc id="29427" level="122" type="RaidBoss" name="Demonic Venom" title="Raid Boss">
+-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++		<parameters>
++			<skill name="SkillID1" id="62056" level="1" /> 
++			<skill name="SkillID2" id="62063" level="1" /> 
++			<param name="SkillID1_Probablity" value="400" /> 
++			<param name="SkillID2_Probablity" value="400" />
++		</parameters>
+ 		<race>DEMONIC</race>
+ 		<sex>MALE</sex>
+ 		<equipment rhand="8203" lhand="8203" /> <!-- Monster Only (Venom Sword) / Monster Only (Venom Sword) -->
+@@ -1566,7 +1571,8 @@
+ 				<defence fire="2200" water="2200" wind="2200" earth="2200" holy="2150" dark="2200" />
+ 			</attribute>
+ 		</stats>
+-		<status attackable="true" />
++		<status attackable="true" noSleepMode="true" canMove="false" />
++		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+ 		<collision>
+ 			<radius normal="27" />
+ 			<height normal="70.5" />
+@@ -1581,10 +1587,18 @@
+ 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
+ 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
+ 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
++			<skill id="62064" level="1" /> <!-- Chaos Power -->
++			<skill id="62063" level="1" /> <!-- Dark Power Flash -->
++			<skill id="62056" level="1" /> <!-- Dark Power Unleashing -->
+ 		</skillList>
+ 	</npc>
+ 	<npc id="29428" level="124" type="RaidBoss" name="Avenger Graff" title="Raid Boss">
+-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++		<parameters>
++			<skill name="SkillID1" id="62058" level="1" /> 
++			<skill name="SkillID2" id="62060" level="1" /> 
++			<param name="SkillID1_Probablity" value="400" /> 
++			<param name="SkillID3_Probablity" value="400" />
++		</parameters>
+ 		<race>UNDEAD</race>
+ 		<sex>MALE</sex>
+ 		<acquire exp="2544338746" sp="2289905" />
+@@ -1602,7 +1616,8 @@
+ 				<defence fire="2350" water="2350" wind="2350" earth="2350" holy="2300" dark="2350" />
+ 			</attribute>
+ 		</stats>
+-		<status attackable="true" />
++		<status attackable="true" noSleepMode="true" canMove="false" />
++		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+ 		<collision>
+ 			<radius normal="34" />
+ 			<height normal="85.4" />
+@@ -1617,10 +1632,18 @@
+ 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
+ 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
+ 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
++			<skill id="62064" level="1" /> <!-- Chaos Power -->
++			<skill id="62060" level="1" /> <!-- Dark Thorn -->
++			<skill id="62058" level="1" /> <!-- Dark Power Unleashing -->
+ 		</skillList>
+ 	</npc>
+ 	<npc id="29429" level="126" type="RaidBoss" name="Mad Cullan" title="Raid Boss">
+-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++		<parameters>
++			<skill name="SkillID1" id="62059" level="1" />
++			<skill name="SkillID2" id="62062" level="1" /> 
++			<param name="SkillID1_Probablity" value="400" /> 
++			<param name="SkillID2_Probablity" value="400" />
++		</parameters>
+ 		<race>DWARF</race>
+ 		<sex>MALE</sex>
+ 		<acquire exp="2627076088" sp="2364368" />
+@@ -1638,7 +1661,8 @@
+ 				<defence fire="2500" water="2500" wind="2450" earth="2500" holy="2500" dark="2500" />
+ 			</attribute>
+ 		</stats>
+-		<status attackable="true" />
++		<status attackable="true" noSleepMode="true" canMove="false" />
++		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+ 		<collision>
+ 			<radius normal="35" />
+ 			<height normal="64.5" />
+@@ -1653,10 +1677,18 @@
+ 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
+ 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
+ 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
++			<skill id="62064" level="1" /> <!-- Chaos Power -->
++			<skill id="62062" level="1" /> <!-- Dark Power Flash -->
++			<skill id="62059" level="1" /> <!-- Dark Power Unleashing -->
+ 		</skillList>
+ 	</npc>
+ 	<npc id="29430" level="128" type="RaidBoss" name="Arrogant Lebruum" title="Raid Boss">
+-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++		<parameters>
++			<skill name="SkillID1" id="62058" level="1" /> 
++			<skill name="SkillID2" id="62060" level="1" /> 
++			<param name="SkillID1_Probablity" value="400" /> 
++			<param name="SkillID3_Probablity" value="400" />
++		</parameters>
+ 		<race>DEMONIC</race>
+ 		<sex>MALE</sex>
+ 		<acquire exp="2711137228" sp="2440023" />
+@@ -1674,7 +1706,8 @@
+ 				<defence fire="2650" water="2650" wind="2650" earth="2650" holy="2600" dark="2650" />
+ 			</attribute>
+ 		</stats>
+-		<status attackable="true" />
++		<status attackable="true" noSleepMode="true" canMove="false" />
++		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
+ 		<collision>
+ 			<radius normal="40" />
+ 			<height normal="84.197" />
+@@ -1689,10 +1722,12 @@
+ 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
+ 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
+ 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
++			<skill id="62064" level="1" /> <!-- Chaos Power -->
++			<skill id="62061" level="1" /> <!-- Dark Thorn -->
++			<skill id="62059" level="1" /> <!-- Dark Power Unleashing -->
+ 		</skillList>
+ 	</npc>
+ 	<npc id="29431" level="126" type="RaidBoss" name="Chaos Golem #17" title="Raid Boss">
+-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+ 		<race>ETC</race>
+ 		<sex>MALE</sex>
+ 		<acquire exp="2627076088" sp="2364368" />
+diff --git dist/game/data/stats/skills/33100-33199.xml dist/game/data/stats/skills/33100-33199.xml
+index fdcbe17..430eae8 100644
+--- dist/game/data/stats/skills/33100-33199.xml
++++ dist/game/data/stats/skills/33100-33199.xml
+@@ -1149,23 +1149,81 @@
+ 	<skill id="33181" toLevel="1" name="Dark Thorn">
+ 		<icon>icon.skill1417</icon>
+ 		<operateType>A1</operateType>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
++		<castRange>600</castRange>
++		<coolTime>500</coolTime>
+ 		<effectPoint>-1000</effectPoint>
++		<hitTime>1000</hitTime>
++		<isMagic>1</isMagic>
++		<magicLevel>120</magicLevel>
++		<magicCriticalRate>5</magicCriticalRate>
++		<reuseDelay>500</reuseDelay>
++		<effects>
++			<effect name="PhysicalDamage">
++				<power>10000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="33182" toLevel="1" name="Darkness Energy Bomb">
+ 		<icon>icon.skill0000</icon>
+ 		<operateType>A1</operateType>
++		<targetType>SELF</targetType>
++		<affectLimit>5-12</affectLimit>
++		<affectObject>NOT_FRIEND</affectObject>
++		<affectRange>300</affectRange>
++		<affectScope>POINT_BLANK</affectScope>
++		<coolTime>500</coolTime>
+ 		<effectPoint>-100</effectPoint>
++		<hitTime>2000</hitTime>
++		<magicCriticalRate>5</magicCriticalRate>
++		<magicLevel>108</magicLevel>
++		<mpConsume>1</mpConsume>
++		<reuseDelay>10000</reuseDelay>
++		<effects>
++			<effect name="PhysicalDamage">
++				<power>10000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="33183" toLevel="1" name="Vicious Killing Strike">
+ 		<icon>icon.skill0000</icon>
+ 		<operateType>A1</operateType>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
++		<castRange>40</castRange>
++		<coolTime>500</coolTime>
+ 		<effectPoint>-100</effectPoint>
++		<effectRange>40</effectRange>
++		<hitTime>1000</hitTime>
++		<magicCriticalRate>-5</magicCriticalRate>
++		<magicLevel>106</magicLevel>
++		<effects>
++			<effect name="PhysicalDamage">
++				<power>10000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="33184" toLevel="1" name="Furious Slasher">
+ 		<icon>icon.skill16204</icon>
+ 		<operateType>A1</operateType>
++		<targetType>SELF</targetType>
++		<affectLimit>5-12</affectLimit>
++		<affectObject>NOT_FRIEND</affectObject>
++		<affectRange>300</affectRange>
++		<affectScope>POINT_BLANK</affectScope>
++		<coolTime>500</coolTime>
+ 		<effectPoint>-100</effectPoint>
++		<hitTime>2000</hitTime>
++		<magicCriticalRate>5</magicCriticalRate>
++		<magicLevel>108</magicLevel>
+ 		<mpConsume>1</mpConsume>
++		<reuseDelay>10000</reuseDelay>
++		<effects>
++			<effect name="PhysicalDamage">
++				<power>10000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="33185" toLevel="1" name="Dark Energy">
+ 		<!-- Increases P. Atk./ M. Atk./ P. Def./ M. Def. at night. -->
+@@ -1181,12 +1239,38 @@
+ 		<!-- Physical melee skill used by warriors. Attacks 1 monster with a weapon. -->
+ 		<icon>icon.skill0000</icon>
+ 		<operateType>A1</operateType>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
++		<castRange>40</castRange>
++		<coolTime>500</coolTime>
+ 		<effectPoint>-100</effectPoint>
++		<effectRange>40</effectRange>
++		<hitTime>1000</hitTime>
++		<magicCriticalRate>-5</magicCriticalRate>
++		<magicLevel>128</magicLevel>
++		<effects>
++			<effect name="PhysicalDamage">
++				<power>10000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="33188" toLevel="1" name="Earth Strike">
+ 		<icon>icon.skill0000</icon>
+ 		<operateType>A1</operateType>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
++		<castRange>40</castRange>
++		<coolTime>500</coolTime>
+ 		<effectPoint>-100</effectPoint>
++		<effectRange>40</effectRange>
++		<hitTime>1000</hitTime>
++		<magicCriticalRate>-5</magicCriticalRate>
++		<magicLevel>128</magicLevel>
++		<effects>
++			<effect name="PhysicalDamage">
++				<power>10000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="33189" toLevel="4" name="Reinforced Shield of Infinity - Lv. 1">
+ 		<!-- Level 1: P./ M. Def. +30%. -->
+diff --git dist/game/data/stats/skills/34200-34299.xml dist/game/data/stats/skills/34200-34299.xml
+index b637214..c7e6372 100644
+--- dist/game/data/stats/skills/34200-34299.xml
++++ dist/game/data/stats/skills/34200-34299.xml
+@@ -1986,25 +1986,6 @@
+ 		<!-- Acquired XP bonus while hunting in a party. All party members receive the same amount of XP with no reference to the party size. -->
+ 		<icon>icon.skill0335</icon>
+ 		<operateType>A1</operateType>
+-		<targetType>ENEMY</targetType>
+-		<affectScope>SINGLE</affectScope>
+-		<castRange>400</castRange>
+-		<coolTime>420</coolTime>
+-		<effectPoint>-337</effectPoint>
+-		<effectRange>400</effectRange>
+-		<hitTime>780</hitTime>
+-		<magicCriticalRate>5</magicCriticalRate>
+-		<magicLevel>76</magicLevel>
+-		<nextAction>CAST</nextAction>
+-		<reuseDelay>1000</reuseDelay>
+-		<effects>
+-			<effect name="PhysicalDamage">
+-				<power>20000</power>
+-				<ignoreShieldDefence>true</ignoreShieldDefence>
+-				<criticalChance>30</criticalChance>
+-				<overHit>true</overHit>
+-			</effect>
+-		</effects>
+ 	</skill>
+ 	<skill id="34286" toLevel="1" name="Green's Protective Elysium Blessing">
+ 		<!-- For 24 h., P. Atk./ M. Atk./ P. Def./ M. Def. +25%. Acquired XP/ SP +5%. The effect remains after death. Cannot be used in the Olympiad or the Ceremony of Chaos. -->
+diff --git dist/game/data/stats/skills/62000-62099.xml dist/game/data/stats/skills/62000-62099.xml
+index 8a3b328..01bd792 100644
+--- dist/game/data/stats/skills/62000-62099.xml
++++ dist/game/data/stats/skills/62000-62099.xml
+@@ -425,76 +425,212 @@
+ 	<skill id="62056" toLevel="1" name="Dark Power Unleashing">
+ 		<!-- Unleashes a wave of chaos that stupefies nearby enemies. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). Affected by Anomaly Resistance. Not affected by immunity. -->
+ 		<icon>icon.skill1169</icon>
+-		<operateType>A1</operateType>
++		<operateType>A2</operateType>
++		<targetType>SELF</targetType>
++		<affectLimit>5-12</affectLimit>
++		<affectObject>NOT_FRIEND</affectObject>
++		<affectRange>1000</affectRange>
++		<affectScope>POINT_BLANK</affectScope>
++		<abnormalLevel>4</abnormalLevel>
++		<abnormalTime>5</abnormalTime>
++		<abnormalType>STUN</abnormalType>
++		<abnormalVisualEffect>STUN</abnormalVisualEffect>
++		<activateRate>100</activateRate>
++		<basicProperty>PHYSICAL</basicProperty>
+ 		<coolTime>500</coolTime>
++		<effectPoint>-100</effectPoint>
++		<hitTime>1500</hitTime>
+ 		<isDebuff>true</isDebuff>
+-		<isMagic>6</isMagic>
++		<lvlBonusRate>30</lvlBonusRate>
++		<magicCriticalRate>5</magicCriticalRate>
++		<magicLevel>122</magicLevel>
++		<reuseDelay>20000</reuseDelay>
++		<trait>SHOCK</trait>
++		<effects>
++			<effect name="BlockActions">
++				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62057" toLevel="1" name="Dark Power Unleashing">
+ 		<!-- Unleashes a wave of chaos that stupefies nearby enemies. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). Affected by Anomaly Resistance. Not affected by immunity. -->
+ 		<icon>icon.skill1169</icon>
+-		<operateType>A1</operateType>
++		<operateType>A2</operateType>
++		<targetType>SELF</targetType>
++		<affectLimit>5-12</affectLimit>
++		<affectObject>NOT_FRIEND</affectObject>
++		<affectRange>1000</affectRange>
++		<affectScope>POINT_BLANK</affectScope>
++		<abnormalLevel>4</abnormalLevel>
++		<abnormalTime>5</abnormalTime>
++		<abnormalType>STUN</abnormalType>
++		<abnormalVisualEffect>STUN</abnormalVisualEffect>
++		<activateRate>100</activateRate>
++		<basicProperty>PHYSICAL</basicProperty>
+ 		<coolTime>500</coolTime>
++		<effectPoint>-100</effectPoint>
++		<hitTime>1500</hitTime>
+ 		<isDebuff>true</isDebuff>
+-		<isMagic>7</isMagic>
++		<lvlBonusRate>30</lvlBonusRate>
++		<magicCriticalRate>5</magicCriticalRate>
++		<magicLevel>124</magicLevel>
++		<reuseDelay>20000</reuseDelay>
++		<trait>SHOCK</trait>
++		<effects>
++			<effect name="BlockActions">
++				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62058" toLevel="1" name="Dark Power Unleashing">
+ 		<!-- Unleashes a wave of chaos that stupefies nearby enemies. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). Affected by Anomaly Resistance. Not affected by immunity. -->
+ 		<icon>icon.skill1169</icon>
+-		<operateType>A1</operateType>
++		<operateType>A2</operateType>
++		<targetType>SELF</targetType>
++		<affectLimit>5-12</affectLimit>
++		<affectObject>NOT_FRIEND</affectObject>
++		<affectRange>1000</affectRange>
++		<affectScope>POINT_BLANK</affectScope>
++		<abnormalLevel>4</abnormalLevel>
++		<abnormalTime>5</abnormalTime>
++		<abnormalType>STUN</abnormalType>
++		<abnormalVisualEffect>STUN</abnormalVisualEffect>
++		<activateRate>100</activateRate>
++		<basicProperty>PHYSICAL</basicProperty>
+ 		<coolTime>500</coolTime>
++		<effectPoint>-100</effectPoint>
++		<hitTime>1500</hitTime>
+ 		<isDebuff>true</isDebuff>
+-		<isMagic>6</isMagic>
++		<lvlBonusRate>30</lvlBonusRate>
++		<magicCriticalRate>5</magicCriticalRate>
++		<magicLevel>124</magicLevel>
++		<reuseDelay>20000</reuseDelay>
++		<trait>SHOCK</trait>
++		<effects>
++			<effect name="BlockActions">
++				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62059" toLevel="1" name="Dark Power Unleashing">
+ 		<!-- Unleashes a wave of chaos that stupefies nearby enemies. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). Affected by Anomaly Resistance. Not affected by immunity. -->
+ 		<icon>icon.skill1169</icon>
+-		<operateType>A1</operateType>
++		<operateType>A2</operateType>
++		<targetType>SELF</targetType>
++		<affectLimit>5-12</affectLimit>
++		<affectObject>NOT_FRIEND</affectObject>
++		<affectRange>1000</affectRange>
++		<affectScope>POINT_BLANK</affectScope>
++		<abnormalLevel>4</abnormalLevel>
++		<abnormalTime>5</abnormalTime>
++		<abnormalType>STUN</abnormalType>
++		<abnormalVisualEffect>STUN</abnormalVisualEffect>
++		<activateRate>100</activateRate>
++		<basicProperty>PHYSICAL</basicProperty>
+ 		<coolTime>500</coolTime>
++		<effectPoint>-100</effectPoint>
++		<hitTime>1500</hitTime>
+ 		<isDebuff>true</isDebuff>
+-		<isMagic>7</isMagic>
++		<lvlBonusRate>30</lvlBonusRate>
++		<magicCriticalRate>5</magicCriticalRate>
++		<magicLevel>126</magicLevel>
++		<reuseDelay>20000</reuseDelay>
++		<trait>SHOCK</trait>
++		<effects>
++			<effect name="BlockActions">
++				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62060" toLevel="1" name="Dark Thorn">
+ 		<icon>icon.skill1417</icon>
+ 		<operateType>A1</operateType>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
+ 		<castRange>600</castRange>
+ 		<coolTime>500</coolTime>
+ 		<effectPoint>-1000</effectPoint>
+ 		<hitTime>1000</hitTime>
+-		<isMagic>1</isMagic> <!-- Magic Skill -->
++		<isMagic>1</isMagic>
++		<magicLevel>124</magicLevel>
++		<magicCriticalRate>5</magicCriticalRate>
++		<reuseDelay>10</reuseDelay>
++		<effects>
++			<effect name="MagicalDamage">
++				<power>20000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62061" toLevel="1" name="Dark Thorn">
+ 		<icon>icon.skill1417</icon>
+ 		<operateType>A1</operateType>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
+ 		<castRange>600</castRange>
+ 		<coolTime>500</coolTime>
+ 		<effectPoint>-1000</effectPoint>
+ 		<hitTime>1000</hitTime>
+-		<isMagic>1</isMagic> <!-- Magic Skill -->
++		<isMagic>1</isMagic>
++		<magicLevel>128</magicLevel>
++		<magicCriticalRate>5</magicCriticalRate>
++		<reuseDelay>10</reuseDelay>
++		<effects>
++			<effect name="MagicalDamage">
++				<power>20000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62062" toLevel="1" name="Dark Power Flash">
+ 		<icon>icon.skill0000</icon>
+ 		<operateType>A1</operateType>
+-		<castRange>2000</castRange>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
++		<castRange>1000</castRange>
+ 		<coolTime>500</coolTime>
+-		<effectPoint>-100</effectPoint>
+-		<hitTime>500</hitTime>
+-		<isMagic>6</isMagic>
++		<effectPoint>-1000</effectPoint>
++		<hitTime>1000</hitTime>
++		<isMagic>1</isMagic>
++		<magicLevel>126</magicLevel>
++		<magicCriticalRate>5</magicCriticalRate>
++		<reuseDelay>1000</reuseDelay>
++		<effects>
++			<effect name="MagicalDamage">
++				<power>20000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62063" toLevel="1" name="Dark Power Flash">
+ 		<icon>icon.skill0000</icon>
+ 		<operateType>A1</operateType>
+-		<castRange>2000</castRange>
++		<targetType>ENEMY</targetType>
++		<affectScope>SINGLE</affectScope>
++		<castRange>1000</castRange>
+ 		<coolTime>500</coolTime>
+-		<effectPoint>-100</effectPoint>
+-		<hitTime>500</hitTime>
+-		<isMagic>6</isMagic>
++		<effectPoint>-1000</effectPoint>
++		<hitTime>1000</hitTime>
++		<isMagic>1</isMagic>
++		<magicLevel>122</magicLevel>
++		<magicCriticalRate>5</magicCriticalRate>
++		<reuseDelay>10</reuseDelay>
++		<effects>
++			<effect name="MagicalDamage">
++				<power>20000</power>
++			</effect>
++		</effects>
+ 	</skill>
+ 	<skill id="62064" toLevel="1" name="Chaos Power">
+ 		<!-- A mysterious energy of Chaos. -->
+ 		<icon>icon.chaotic_ether</icon>
+ 		<operateType>A2</operateType>
++		<targetType>SELF</targetType>
++		<abnormalLevel>1</abnormalLevel>
++		<abnormalTime>-1</abnormalTime>
++		<abnormalVisualEffect>B_SMOKE_SPAWN_AVE</abnormalVisualEffect>
++		<basicProperty>NONE</basicProperty>
+ 		<effectPoint>1</effectPoint>
++		<hitCancelTime>0</hitCancelTime>
++		<magicCriticalRate>-5</magicCriticalRate>
++		<magicLevel>115</magicLevel>
+ 	</skill>
+ 	<skill id="62065" toLevel="1" name="Prophet's Gift">
+ 		<icon>icon.skill0000</icon>
