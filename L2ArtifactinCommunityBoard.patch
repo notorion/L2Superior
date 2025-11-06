@@ -1,0 +1,804 @@
+### Eclipse Workspace Patch 1.0
+#P L2J_Mobius_12.3_Superion
+diff --git dist/game/data/html/CommunityBoard/Custom/merchant/artifact.html dist/game/data/html/CommunityBoard/Custom/merchant/artifact.html
+new file mode 100644
+index 0000000..5135abf
+--- /dev/null
++++ dist/game/data/html/CommunityBoard/Custom/merchant/artifact.html
+@@ -0,0 +1,113 @@
++<html noscrollbar>
++	<body>
++		<table width=700>
++			<tr>
++				<td height=10></td>
++			</tr>
++		</table>
++		<table width=20>
++			<tr>
++				<td>
++					%navigation%
++				</td>
++				<td>
++					<center>
++						<table border=0 cellpadding=0 cellspacing=0 width=555 height=455 background="L2UI_CT1.Windows_DF_TooltipBG">
++							<tr>
++								<td height=25></td>
++							</tr>
++							<tr>
++								<td height=25 align="center"><font name="hs12" color="CDB67F">Artifact</font></td>
++							</tr>
++							<tr>
++								<td>
++									<center><img src="L2UI.SquareGray" width=200 height=1></center>
++								</td>
++							</tr>
++							<tr>
++								<td height=25></td>
++							</tr>
++							<tr>
++								<td align="center">
++									<table align=center border="0" height=200>
++										<tr>
++											<td>
++												<center>
++													<img src="icon.artifact_b_pa" width=32 height=32>
++													<br1>
++													<button value="Artifact" action="bypass _bbsmultisell;600030,merchant/artifact" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
++												</center>
++											</td>
++											<td>
++												<center>
++													<img src="icon.bm_artifact_b_box_i00" width=32 height=32>
++													<br1>
++													<button value="Box Artifact" action="bypass _bbsmultisell;600031,merchant/artifact" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
++												</center>
++											</td>
++											
++										</tr>
++										<tr>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++										</tr>
++										<tr>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++										</tr>
++										<tr>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++										</tr>
++										<tr>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td></td>
++											<td>
++												<center>
++													<br><br><br><br><br>
++													<br><br><br><br><br>
++													<button value="< Back" action="bypass _bbstop;merchant/main.html" width=85 height=26 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
++												</center>
++											</td>
++										</tr>
++									</table>
++								</td>
++							</tr>
++						</table>
++						<table border=0 cellpadding=0 cellspacing=0 width=555>
++							<tr>
++								<td height=10></td>
++							</tr>
++						</table>
++						<table border=0 cellpadding=0 cellspacing=0 width=555 background="L2UI_CT1.Windows_DF_TooltipBG">
++							<tr>
++								<td height=17></td>
++							</tr>
++							<tr>
++								<td align=center><font color=696969>LINEAGE II - COMMUNITY BOARD</font></td>
++							</tr>
++							<tr>
++								<td height=15></td>
++							</tr>
++						</table>
++					</center>
++				</td>
++			</tr>
++		</table>
++	</body>
++</html>
+\ No newline at end of file
+diff --git dist/game/data/html/CommunityBoard/Custom/merchant/main.html dist/game/data/html/CommunityBoard/Custom/merchant/main.html
+index 4136b28..251406f 100644
+--- dist/game/data/html/CommunityBoard/Custom/merchant/main.html
++++ dist/game/data/html/CommunityBoard/Custom/merchant/main.html
+@@ -228,6 +228,13 @@
+ 												<button value="Charms" action="bypass _bbsmultisell;600029,merchant/main" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+ 											</center>
+ 										</td>
++										<td>
++											<center>
++												<img src="icon.artifact_b_pa" width=32 height=32>
++												<br1>
++												<button value="Artifact" action="bypass _bbstop;merchant/artifact.html" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
++											</center>
++										</td>
+ 										<td></td>
+ 										<td></td>
+ 										<td></td>
+diff --git dist/game/data/multisell/custom/600030.xml dist/game/data/multisell/custom/600030.xml
+new file mode 100644
+index 0000000..8670976
+--- /dev/null
++++ dist/game/data/multisell/custom/600030.xml
+@@ -0,0 +1,248 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
++	<npcs>
++		<npc>-1</npc> <!-- CB -->
++	</npcs>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48954" /> <!-- Artifact Book -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<ingredient count="1" id="48954" /> <!-- Artifact Book -->
++		<production count="1" id="48955" /> <!-- Artifact Book -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<ingredient count="1" id="48955" /> <!-- Artifact Book -->
++		<production count="1" id="48956" /> <!-- Artifact Book -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48957" /> <!-- Artifact - P. Atk. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48958" /> <!-- Artifact - M. Atk. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48959" /> <!-- Artifact - Atk. Spd. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48960" /> <!-- Artifact - Casting Spd. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48961" /> <!-- Artifact - P. Def. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48962" /> <!-- Artifact - M. Def. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48963" /> <!-- Artifact - Max HP -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48964" /> <!-- Artifact - Max MP -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48965" /> <!-- Artifact - Acquired XP -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48966" /> <!-- Artifact - Vampiric Rage -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48967" /> <!-- Artifact - Speed -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48968" /> <!-- Artifact - Received Healing -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48969" /> <!-- Artifact - P. Atk. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48970" /> <!-- Artifact - M. Atk. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48971" /> <!-- Artifact - P. Accuracy -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48972" /> <!-- Artifact - M. Accuracy -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48973" /> <!-- Artifact - Standard Attack Critical Rate -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48974" /> <!-- Artifact - P. Skill Critical Rate -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48975" /> <!-- Artifact - M. Critical Rate -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48976" /> <!-- Artifact - Recovery Potions' Effect -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48977" /> <!-- Artifact - Received Damage When Immobilized -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48980" /> <!-- Artifact - Attribute Attack -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48981" /> <!-- Artifact - Attribute Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48982" /> <!-- Artifact - Received Damage When Immobilized (No upgrade) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48983" /> <!-- Artifact - P. Skill Power -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48984" /> <!-- Artifact - M. Skill Power -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="48985" /> <!-- Artifact - Fixed Damage Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80647" /> <!-- Artifact - Critical Damage for Basic Attacks -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80648" /> <!-- Artifact - P. Skill Critical Damage -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80649" /> <!-- Artifact - M. Skill Critical Damage -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80650" /> <!-- Artifact - Bow Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80651" /> <!-- Artifact - Dagger Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80652" /> <!-- Artifact - Sword Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80653" /> <!-- Artifact - Vitality Bonus -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80654" /> <!-- Artifact - Vitality Consumption -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80655" /> <!-- Artifact - Skill MP Consumption -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80656" /> <!-- Artifact - P. Def. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80657" /> <!-- Artifact - M. Def. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80658" /> <!-- Artifact - Critical Damage for Basic Attacks -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80659" /> <!-- Artifact - P. Skill Critical Damage -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80660" /> <!-- Artifact - M. Skill Critical Damage -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80661" /> <!-- Artifact - Atk. Spd. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="80662" /> <!-- Artifact - Casting Spd. -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81430" /> <!-- Artifact - Attribute Attack -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81431" /> <!-- Artifact - P. Skill Power -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81432" /> <!-- Artifact - M. Skill Power -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81433" /> <!-- Artifact - Attribute Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81434" /> <!-- Artifact - Received Damage When Immobilized -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81435" /> <!-- Artifact - Received P. Critical Damage -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81436" /> <!-- Artifact - Recovery Potions' Effect -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81437" /> <!-- Artifact - Fixed Damage Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81438" /> <!-- Artifact - Damage Reflection Resistance -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81439" /> <!-- Artifact - Vitality Bonus -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81440" /> <!-- Artifact - Received Healing -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81441" /> <!-- Artifact - Skill MP Consumption -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="81442" /> <!-- Artifact - Received P. Critical Rate -->
++	</item>
++	<item>
++		<ingredient count="10000" id="48472" /> <!-- Einhasad's Golden Coin -->
++		<production count="1" id="82992" /> <!-- Silvery Artifact Book -->
++	</item>
++</list>
+\ No newline at end of file
+diff --git dist/game/data/multisell/custom/600031.xml dist/game/data/multisell/custom/600031.xml
+new file mode 100644
+index 0000000..4273f21
+--- /dev/null
++++ dist/game/data/multisell/custom/600031.xml
+@@ -0,0 +1,402 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
++	<npcs>
++		<npc>-1</npc> <!-- CB -->
++	</npcs>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29923" /> <!-- Artifact Pack - P. Atk. +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29924" /> <!-- Artifact Pack - M. Atk. +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29925" /> <!-- Artifact Pack - Atk. Spd. +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29926" /> <!-- Artifact Pack - Casting Spd. +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29927" /> <!-- Artifact Pack - P. Def. +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29928" /> <!-- Artifact Pack - M. Def. +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29929" /> <!-- Artifact Pack - Max HP +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29930" /> <!-- Artifact Pack - Max MP +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29931" /> <!-- Artifact Pack - Acquired XP +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29932" /> <!-- Artifact Pack - Vampiric Rage +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29933" /> <!-- Artifact Pack - Speed +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29934" /> <!-- Artifact Pack - Received Healing +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29935" /> <!-- Artifact Pack - P. Atk. +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29936" /> <!-- Artifact Pack - M. Atk. +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29937" /> <!-- Artifact Pack - P. Accuracy +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29938" /> <!-- Artifact Pack - M. Accuracy +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29939" /> <!-- Artifact Pack - Standard Attack Critical Rate +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29940" /> <!-- Artifact Pack - P. Skill Critical Rate +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29941" /> <!-- Artifact Pack - M. Critical Rate +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29942" /> <!-- Artifact Pack - Recovery Potions' Effect +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29943" /> <!-- Artifact Pack - Received Damage When Immobilized +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29944" /> <!-- Artifact Pack - Standard Attack Critical Damage +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29945" /> <!-- Artifact Pack - P. Skill Critical Damage +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29946" /> <!-- Artifact Pack - M. Skill Critical Damage +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29947" /> <!-- Artifact Pack - Bow Resistance +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29948" /> <!-- Artifact Pack - Dagger Resistance +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29949" /> <!-- Artifact Pack - Sword Resistance +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29950" /> <!-- Artifact Pack - Vitality Bonus +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29951" /> <!-- Artifact Pack - Vitality Consumption +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29952" /> <!-- Artifact Pack - Skill MP Consumption +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29953" /> <!-- Artifact Pack - P. Def. +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29954" /> <!-- Artifact Pack - M. Def. +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29955" /> <!-- Artifact Pack - Standard Attack Critical Damage +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29956" /> <!-- Artifact Pack - P. Skill Critical Damage +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29957" /> <!-- Artifact Pack - M. Skill Critical Damage +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29958" /> <!-- Artifact Pack - Atk. Spd. +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29959" /> <!-- Artifact Pack - Casting Spd. +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29960" /> <!-- Artifact Pack - Attribute Attack +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29961" /> <!-- Artifact Pack - P. Skill Power +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29962" /> <!-- Artifact Pack - M. Skill Power +7 (Attack) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29963" /> <!-- Artifact Pack - Attribute Resistance +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29964" /> <!-- Artifact Pack - Received Damage When Immobilized +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29965" /> <!-- Artifact Pack - Received P. Critical Damage +7 (Defense) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29966" /> <!-- Artifact Pack - Recovery Potions' Effect +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29967" /> <!-- Artifact Pack - Fixed Damage Resistance +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29968" /> <!-- Artifact Pack - Damage Reflection Resistance +7 (Support) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29969" /> <!-- Artifact Pack - Vitality Bonus +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29970" /> <!-- Artifact Pack - Received Healing +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29971" /> <!-- Artifact Pack - Skill MP Consumption +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="10000000" id="57" /> <!-- Adena -->
++		<production count="1" id="29972" /> <!-- Artifact Pack - Received P. Critical Rate +7 (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60099" /> <!-- +8 Artifact Pack - P. Atk. (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60100" /> <!-- +8 Artifact Pack - M. Atk. (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60101" /> <!-- +8 Artifact Pack - Atk. Spd. (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60102" /> <!-- +8 Artifact Pack - Casting Spd. (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60103" /> <!-- +8 Artifact Pack - P. Def. (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60104" /> <!-- +8 Artifact Pack - M. Def. (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60105" /> <!-- +8 Artifact Pack - Max HP (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60106" /> <!-- +8 Artifact Pack - Max MP (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60107" /> <!-- +8 Artifact Pack - Acquired XP (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60108" /> <!-- +8 Artifact Pack - Vampiric Rage (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60109" /> <!-- +8 Artifact Pack - Speed (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60110" /> <!-- +8 Artifact Pack - Received Healing (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60111" /> <!-- +8 Artifact Pack - P. Atk. (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60112" /> <!-- +8 Artifact Pack - M. Atk. (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60113" /> <!-- +8 Artifact Pack - P. Accuracy (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60114" /> <!-- +8 Artifact Pack - M. Accuracy (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60115" /> <!-- +8 Artifact Pack - Critical Rate for Basic Attacks (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60116" /> <!-- +8 Artifact Pack - P. Skill Critical Rate (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60117" /> <!-- +8 Artifact Pack - M. Critical Rate (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60118" /> <!-- +8 Artifact Pack - Recovery Potions' Effect (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60119" /> <!-- +8 Artifact Pack - Received Damage When Immobilized (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60120" /> <!-- +8 Artifact Pack - Critical Damage for Basic Attacks (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60121" /> <!-- +8 Artifact Pack - P. Skill Critical Damage (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60122" /> <!-- +8 Artifact Pack - M. Skill Critical Damage (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60123" /> <!-- +8 Artifact Pack - Bow Resistance (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60124" /> <!-- +8 Artifact Pack - Dagger Resistance (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60125" /> <!-- +8 Artifact Pack - Sword Resistance (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60126" /> <!-- +8 Artifact Pack - Vitality Bonus (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60127" /> <!-- +8 Artifact Pack - Vitality Consumption (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60128" /> <!-- +8 Artifact Pack - Skill MP Consumption (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60129" /> <!-- +8 Artifact Pack - P. Def. (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60130" /> <!-- +8 Artifact Pack - M. Def. (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60131" /> <!-- +8 Artifact Pack - Critical Damage for Basic Attacks (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60132" /> <!-- +8 Artifact Pack - P. Skill Critical Damage (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60133" /> <!-- +8 Artifact Pack - M. Skill Critical Damage (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60134" /> <!-- +8 Artifact Pack - Atk. Spd. (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60135" /> <!-- +8 Artifact Pack - Casting Spd. (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60136" /> <!-- +8 Artifact Pack - Attribute Attack (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60137" /> <!-- +8 Artifact Pack - P. Skill Power (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60138" /> <!-- +8 Artifact Pack - M. Skill Power (Attack) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60139" /> <!-- +8 Artifact Pack - Attribute Resistance (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60140" /> <!-- +8 Artifact Pack - Received Damage When Immobilized (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60141" /> <!-- +8 Artifact Pack - Received P. Critical Damage (Defense) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60142" /> <!-- +8 Artifact Pack - Recovery Potions' Effect (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60143" /> <!-- +8 Artifact Pack - Fixed Damage Resistance (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60144" /> <!-- +8 Artifact Pack - Damage Reflection Resistance (Support) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60145" /> <!-- +8 Artifact Pack - Vitality Bonus (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60146" /> <!-- +8 Artifact Pack - Received Healing (Balance) -->
++	</item>
++	<item>
++		<ingredient count="15000000" id="57" /> <!-- Adena -->
++		<production count="1" id="60147" /> <!-- +8 Artifact Pack - Skill MP Consumption (Balance) -->
++	</item>
++</list>
+\ No newline at end of file
