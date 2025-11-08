@@ -1,0 +1,20 @@
+### Eclipse Workspace Patch 1.0
+#P L2J_Mobius_12.3_Superion
+diff --git dist/game/data/html/CommunityBoard/Custom/merchant/main.html dist/game/data/html/CommunityBoard/Custom/merchant/main.html
+index 4136b28..251406f 100644
+--- dist/game/data/html/CommunityBoard/Custom/merchant/main.html
++++ dist/game/data/html/CommunityBoard/Custom/merchant/main.html
+@@ -228,6 +228,13 @@
+ 												<button value="Charms" action="bypass _bbsmultisell;600029,merchant/main" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+ 											</center>
+ 										</td>
++										<td>
++											<center>
++												<img src="icon.artifact_b_pa" width=32 height=32>
++												<br1>
++												<button value="Artifact" action="bypass _bbstop;merchant/artifact.html" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
++											</center>
++										</td>
+ 										<td></td>
+ 										<td></td>
+ 										<td></td>
