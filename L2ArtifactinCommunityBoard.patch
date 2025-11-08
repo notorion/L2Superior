@@ -120,30 +120,12 @@ index 0000000..5135abf
 +	</body>
 +</html>
 \ No newline at end of file
-diff --git dist/game/data/html/CommunityBoard/Custom/merchant/main.html dist/game/data/html/CommunityBoard/Custom/merchant/main.html
-index 4136b28..251406f 100644
---- dist/game/data/html/CommunityBoard/Custom/merchant/main.html
-+++ dist/game/data/html/CommunityBoard/Custom/merchant/main.html
-@@ -228,6 +228,13 @@
- 												<button value="Charms" action="bypass _bbsmultisell;600029,merchant/main" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
- 											</center>
- 										</td>
-+										<td>
-+											<center>
-+												<img src="icon.artifact_b_pa" width=32 height=32>
-+												<br1>
-+												<button value="Artifact" action="bypass _bbstop;merchant/artifact.html" width=85 height=27 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
-+											</center>
-+										</td>
- 										<td></td>
- 										<td></td>
- 										<td></td>
 diff --git dist/game/data/multisell/custom/600030.xml dist/game/data/multisell/custom/600030.xml
 new file mode 100644
-index 0000000..8670976
+index 0000000..e2a34a0
 --- /dev/null
 +++ dist/game/data/multisell/custom/600030.xml
-@@ -0,0 +1,248 @@
+@@ -0,0 +1,242 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
 +	<npcs>
@@ -155,12 +137,10 @@ index 0000000..8670976
 +	</item>
 +	<item>
 +		<ingredient count="15000000" id="57" /> <!-- Adena -->
-+		<ingredient count="1" id="48954" /> <!-- Artifact Book -->
 +		<production count="1" id="48955" /> <!-- Artifact Book -->
 +	</item>
 +	<item>
 +		<ingredient count="15000000" id="57" /> <!-- Adena -->
-+		<ingredient count="1" id="48955" /> <!-- Artifact Book -->
 +		<production count="1" id="48956" /> <!-- Artifact Book -->
 +	</item>
 +	<item>
@@ -386,10 +366,6 @@ index 0000000..8670976
 +	<item>
 +		<ingredient count="15000000" id="57" /> <!-- Adena -->
 +		<production count="1" id="81442" /> <!-- Artifact - Received P. Critical Rate -->
-+	</item>
-+	<item>
-+		<ingredient count="10000" id="48472" /> <!-- Einhasad's Golden Coin -->
-+		<production count="1" id="82992" /> <!-- Silvery Artifact Book -->
 +	</item>
 +</list>
 \ No newline at end of file
