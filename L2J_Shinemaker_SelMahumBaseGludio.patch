@@ -1,5 +1,5 @@
 ### Eclipse Workspace Patch 1.0
-#P L2J_Mobius_12.3_Superion
+#P L2J_Mobius_11.3_Shinemaker
 diff --git dist/game/data/html/default/34715.htm dist/game/data/html/default/34715.htm
 new file mode 100644
 index 0000000..5bdef9d
@@ -33,7 +33,7 @@ index 0000000..bb8179f
 \ No newline at end of file
 diff --git dist/game/data/spawns/Gludio/SelMahumBase.xml dist/game/data/spawns/Gludio/SelMahumBase.xml
 new file mode 100644
-index 0000000..669e037
+index 0000000..1353682
 --- /dev/null
 +++ dist/game/data/spawns/Gludio/SelMahumBase.xml
 @@ -0,0 +1,10 @@
@@ -41,99 +41,102 @@ index 0000000..669e037
 +<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 +	<spawn name="Lizardman_Npc_SelMahumBase" >
 +		<group name="Lizardman_Npc_SelMahumBase">
-+			<npc id="34744" x="-52336" y="152115" z="-2576" heading="60348" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Tanta Lizardman Envoy -->
++			<npc id="34715" x="-52336" y="152115" z="-2576" heading="60348" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Tanta Lizardman Envoy -->
 +			<npc id="34716" x="-52301" y="151918" z="-2568" heading="60348" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Tanta Lizardman Escort Warrior -->
 +			<npc id="34716" x="-52120" y="152109" z="-2560" heading="60348" respawnRandom="0sec" chaseRange="900" respawnTime="2sec" /> <!-- Tanta Lizardman Escort Warrior -->
 +		</group>
 +	</spawn>
 +</list>
 diff --git dist/game/data/stats/npcs/24900-24999.xml dist/game/data/stats/npcs/24900-24999.xml
-index d779dbfe..0c904ca 100644
+index ab1f7f3..aabe14d 100644
 --- dist/game/data/stats/npcs/24900-24999.xml
 +++ dist/game/data/stats/npcs/24900-24999.xml
-@@ -3240,14 +3240,13 @@
- 		</dropLists>
+@@ -2498,11 +2498,10 @@
  	</npc>
- 	<npc id="24961" level="130" type="Monster" name="Sel Mahum Footman">
+-	<npc id="24961" level="124" type="Monster" name="Sel Mahum Footman">
 -		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++	<npc id="24961" level="130" type="Monster" name="Sel Mahum Footman">
  		<race>HUMANOID</race>
  		<sex>MALE</sex>
- 		<acquire exp="1367583" sp="1231" />
+-		<acquire exp="829102" sp="746" />
++		<acquire exp="1367583" sp="1231" />
  		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
- 			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
+-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
++			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
  			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 -			<defence physical="753240" magical="364523" />
 +			<defence physical="85240" magical="55523" />
  			<speed>
- 				<walk ground="60" />
- 				<run ground="180" />
-@@ -3259,6 +3258,7 @@
+@@ -2513,4 +2512,4 @@
+ 			<attribute>
+-				<attack type="FIRE" value="2050" />
+-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
++				<attack type="FIRE" value="2500" />
++				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
  			</attribute>
- 		</stats>
+@@ -2518,2 +2517,3 @@
  		<status attackable="true" />
 +		<ai type="BALANCED" isAggressive="false" />
  		<collision>
- 			<radius normal="37.7" />
- 			<height normal="49" />
-@@ -3268,6 +3268,7 @@
- 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
- 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+@@ -2527,2 +2527,3 @@
  			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
 +			<skill id="34467" level="1" /> <!-- Sel Mahum's Flame Hammer -->
  		</skillList>
- 		<dropLists>
- 			<drop>
-@@ -3296,14 +3297,13 @@
- 		</dropLists>
+@@ -2543,11 +2544,10 @@
  	</npc>
- 	<npc id="24962" level="130" type="Monster" name="Sel Mahum Elite Soldier">
+-	<npc id="24962" level="124" type="Monster" name="Sel Mahum Elite Soldier">
 -		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++	<npc id="24962" level="130" type="Monster" name="Sel Mahum Elite Soldier">
  		<race>HUMANOID</race>
  		<sex>MALE</sex>
- 		<acquire exp="1367583" sp="1231" />
+-		<acquire exp="829102" sp="746" />
++		<acquire exp="1367583" sp="1231" />
  		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
- 			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
+-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
++			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
  			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 -			<defence physical="753240" magical="364523" />
 +			<defence physical="85240" magical="55523" />
  			<speed>
- 				<walk ground="60" />
- 				<run ground="180" />
-@@ -3315,6 +3315,7 @@
+@@ -2558,4 +2558,4 @@
+ 			<attribute>
+-				<attack type="FIRE" value="2050" />
+-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
++				<attack type="FIRE" value="2500" />
++				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
  			</attribute>
- 		</stats>
+@@ -2563,2 +2563,3 @@
  		<status attackable="true" />
 +		<ai type="BALANCED" isAggressive="false" />
  		<collision>
- 			<radius normal="43.5" />
- 			<height normal="57" />
-@@ -3324,6 +3325,7 @@
- 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
- 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+@@ -2572,2 +2573,3 @@
  			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
 +			<skill id="34468" level="1" /> <!-- Sel Mahum's Fire Vortex -->
  		</skillList>
- 		<dropLists>
- 			<drop>
-@@ -3352,14 +3354,13 @@
- 		</dropLists>
+@@ -2588,11 +2590,10 @@
  	</npc>
- 	<npc id="24963" level="130" type="Monster" name="Sel Mahum Shaman">
+-	<npc id="24963" level="124" type="Monster" name="Sel Mahum Shaman">
 -		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++	<npc id="24963" level="130" type="Monster" name="Sel Mahum Shaman">
  		<race>HUMANOID</race>
  		<sex>MALE</sex>
- 		<acquire exp="1367583" sp="1231" />
+-		<acquire exp="829102" sp="746" />
++		<acquire exp="1367583" sp="1231" />
  		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
- 			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
+-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
++			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
  			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 -			<defence physical="753240" magical="364523" />
 +			<defence physical="70240" magical="65523" />
  			<speed>
- 				<walk ground="60" />
- 				<run ground="150" />
-@@ -3371,6 +3372,11 @@
+@@ -2603,4 +2604,4 @@
+ 			<attribute>
+-				<attack type="FIRE" value="2050" />
+-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
++				<attack type="FIRE" value="2500" />
++				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
  			</attribute>
- 		</stats>
+@@ -2608,2 +2609,7 @@
  		<status attackable="true" />
 +		<ai type="MAGE" aggroRange="400" clanHelpRange="700" isAggressive="true">
 +			<clanList>
@@ -141,35 +144,34 @@ index d779dbfe..0c904ca 100644
 +			</clanList>
 +		</ai>
  		<collision>
- 			<radius normal="35.1" />
- 			<height normal="41.85" />
-@@ -3380,6 +3386,7 @@
- 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
- 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+@@ -2617,2 +2623,3 @@
  			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
 +			<skill id="34469" level="1" /> <!-- Sel Mahum's Ignition -->
  		</skillList>
- 		<dropLists>
- 			<drop>
-@@ -3408,14 +3415,13 @@
- 		</dropLists>
+@@ -2633,11 +2640,10 @@
  	</npc>
- 	<npc id="24964" level="130" type="Monster" name="Sel Mahum Wizard">
+-	<npc id="24964" level="124" type="Monster" name="Sel Mahum Wizard">
 -		<!-- AUTO GENERATED NPC TODO: FIX IT -->
++	<npc id="24964" level="130" type="Monster" name="Sel Mahum Wizard">
  		<race>HUMANOID</race>
  		<sex>MALE</sex>
- 		<acquire exp="1367583" sp="1231" />
+-		<acquire exp="829102" sp="746" />
++		<acquire exp="1367583" sp="1231" />
  		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
- 			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
+-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
++			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
  			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 -			<defence physical="753240" magical="364523" />
 +			<defence physical="70240" magical="65523" />
  			<speed>
- 				<walk ground="49" />
- 				<run ground="150" />
-@@ -3427,6 +3433,11 @@
+@@ -2648,4 +2654,4 @@
+ 			<attribute>
+-				<attack type="FIRE" value="2050" />
+-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
++				<attack type="FIRE" value="2500" />
++				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
  			</attribute>
- 		</stats>
+@@ -2653,2 +2659,7 @@
  		<status attackable="true" />
 +		<ai type="MAGE" aggroRange="400" clanHelpRange="700" isAggressive="true">
 +			<clanList>
@@ -177,29 +179,21 @@ index d779dbfe..0c904ca 100644
 +			</clanList>
 +		</ai>
  		<collision>
- 			<radius normal="43.5" />
- 			<height normal="51.75" />
-@@ -3436,6 +3447,7 @@
- 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
- 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+@@ -2662,2 +2673,3 @@
  			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
 +			<skill id="34469" level="1" /> <!-- Sel Mahum's Ignition -->
  		</skillList>
- 		<dropLists>
- 			<drop>
 diff --git dist/game/data/stats/skills/34400-34499.xml dist/game/data/stats/skills/34400-34499.xml
-index 40efd8d..a51eb40 100644
+index 910f9c3..85508e1 100644
 --- dist/game/data/stats/skills/34400-34499.xml
 +++ dist/game/data/stats/skills/34400-34499.xml
-@@ -783,19 +783,52 @@
- 		<!-- Physical attack -->
- 		<icon>icon.skill0000</icon>
+@@ -769,2 +769,14 @@
  		<operateType>A1</operateType>
 +		<targetType>ENEMY</targetType>
 +		<affectScope>SINGLE</affectScope>
 +		<castRange>40</castRange>
 +		<coolTime>500</coolTime>
- 		<effectPoint>-100</effectPoint>
++		<effectPoint>-100</effectPoint>
 +		<effectRange>100</effectRange>
 +		<hitTime>1000</hitTime>
 +		<effects>
@@ -208,15 +202,13 @@ index 40efd8d..a51eb40 100644
 +			</effect>
 +		</effects>
  	</skill>
- 	<skill id="34468" toLevel="1" name="Sel Mahum's Fire Vortex">
- 		<!-- Physical attack -->
- 		<icon>icon.skill0000</icon>
+@@ -774,2 +786,14 @@
  		<operateType>A1</operateType>
 +		<targetType>ENEMY</targetType>
 +		<affectScope>SINGLE</affectScope>
 +		<castRange>40</castRange>
 +		<coolTime>500</coolTime>
- 		<effectPoint>-100</effectPoint>
++		<effectPoint>-100</effectPoint>
 +		<effectRange>100</effectRange>
 +		<hitTime>1000</hitTime>
 +		<effects>
@@ -225,15 +217,13 @@ index 40efd8d..a51eb40 100644
 +			</effect>
 +		</effects>
  	</skill>
- 	<skill id="34469" toLevel="1" name="Sel Mahum's Ignition">
- 		<!-- A magic counterattack in response to a basic one. -->
- 		<icon>icon.skill0000</icon>
+@@ -779,2 +803,14 @@
  		<operateType>A1</operateType>
 +		<targetType>ENEMY</targetType>
 +		<affectScope>SINGLE</affectScope>
 +		<castRange>40</castRange>
 +		<coolTime>500</coolTime>
- 		<effectPoint>-100</effectPoint>
++		<effectPoint>-100</effectPoint>
 +		<effectRange>100</effectRange>
 +		<hitTime>1000</hitTime>
 +		<effects>
@@ -242,5 +232,3 @@ index 40efd8d..a51eb40 100644
 +			</effect>
 +		</effects>
  	</skill>
- 	<skill id="34470" toLevel="1" name="Night in the Temple">
- 		<!-- Shillien's power increases P. Atk./ M. Atk./ P. Def./ M. Def. at night. -->
