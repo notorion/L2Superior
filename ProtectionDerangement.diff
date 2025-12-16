@@ -1,0 +1,12 @@
+diff --git dist/game/data/stats/skills/46700-46799.xml dist/game/data/stats/skills/46700-46799.xml
+index d3e867aead3..2f3605694a0 100644
+--- dist/game/data/stats/skills/46700-46799.xml
++++ dist/game/data/stats/skills/46700-46799.xml
+@@ -1240,6 +1240,7 @@
+ 		<targetType>ENEMY_ONLY</targetType>
+ 		<abnormalLevel>1</abnormalLevel>
+ 		<abnormalTime>15</abnormalTime>
++		<abnormalType>DERANGEMENT</abnormalType>
+ 		<activateRate>100</activateRate>
+ 		<affectScope>SINGLE</affectScope>
+ 		<basicProperty>MAGIC</basicProperty>

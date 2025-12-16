@@ -1,0 +1,13 @@
+diff --git dist/game/data/stats/skills/32600-32699.xml dist/game/data/stats/skills/32600-32699.xml
+index 340df16cf48..c788590e44e 100644
+--- dist/game/data/stats/skills/32600-32699.xml
++++ dist/game/data/stats/skills/32600-32699.xml
+@@ -1048,7 +1048,7 @@
+ 		<magicCriticalRate>-5</magicCriticalRate>
+ 		<effects>
+ 			<effect name="BlockAbnormalSlot">
+-				<slot>AIRBIND;DERANGEMENT;CHANGEBODY;SLEEP;PARALYZE;KNOCKDOWN;TURN_STONE;STUN;SILENCE;SHILLIEN_STUN;SAYHAS_RING;SILENCE_PHYSICAL;ROOT_MAGICALLY</slot>
++				<slot>BODY_DESTRUCTION;SPEED_DOWN;AIRBIND;DERANGEMENT;CHANGEBODY;SLEEP;PARALYZE;KNOCKDOWN;TURN_STONE;STUN;SILENCE;SHILLIEN_STUN;SAYHAS_RING;SILENCE_PHYSICAL;FREEZE;FREEZE_SLOW;ATTACK_TIME_UP;ROOT_MAGICALLY</slot>
+ 			</effect>
+ 			<effect name="DefenceTrait">
+ 				<HOLD>100</HOLD>
